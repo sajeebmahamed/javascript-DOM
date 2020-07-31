@@ -33,3 +33,42 @@ function $(selector) {
     return document.querySelector(selector)
 }
 
+let h1 = document.querySelector('#my-id')
+// h1.style.background = 'red'
+// h1.style.fontSize = '5rem'
+
+let h1Style = {
+    background: 'salmon',
+    fontSize: '30px',
+    padding: '3rem',
+    textAlign: 'center',
+    boxShadow: '10px 10px 15px #2d2d2d'
+}
+Object.assign(h1.style, h1Style)
+
+let pStyle = {
+    fontSize: '3rem',
+    fontWeight: 'bold',
+    color: 'green'
+}
+Object.assign($('p').style, pStyle)
+
+let myBtn = document.querySelector('#btn')
+console.log(myBtn);
+let myP = document.querySelector('#myP')
+console.log(myP);
+
+let isShown = false
+
+myBtn.addEventListener("click", function() {
+    if(isShown) {
+        myP.style.visibility = "hidden"
+        isShown = false
+        myBtn.innerHTML = "Show"
+    }
+    else {
+        myP.style.visibility = "visible"
+        isShown = true
+        myBtn.innerHTML = "Hide"
+    }
+})
